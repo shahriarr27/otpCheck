@@ -5,6 +5,8 @@ var keys = document.querySelectorAll('.key');
 var otpInput = document.getElementById('otpInput');
 var addValues = [];
 
+const checkBtn = document.getElementById('checkBtn');
+
 otpGenBtn.addEventListener('click', function(){
   generateOTP();
   genNumber.value = parseInt(randomOtp);
@@ -12,6 +14,24 @@ otpGenBtn.addEventListener('click', function(){
 
 keys.forEach(function(key){
   getKeyValue(key);
+});
+
+checkBtn.addEventListener('click',function(){
+  if (genNumber.value == ''){
+    alert('Generate an OTP First');
+  }
+  else{
+    var result = document.getElementById('result');
+    result.style.display = 'block';
+    if (genNumber.value == otpInput.value){
+      document.getElementById('matched').style.display = 'block';
+      document.getElementById('failed').style.display = 'none';
+    }
+    else{
+      document.getElementById('matched').style.display = 'none';
+      document.getElementById('failed').style.display = 'block';
+    }
+  }
 });
 
 function getKeyValue(key){
