@@ -11,40 +11,44 @@ html {
   box-sizing: inherit;
 }
 
-body{
+body {
   background: #e0eaff;
 }
 
-.whole-wrapper{
+.whole-wrapper {
   width: 60%;
   margin: 5% auto;
   padding: 0px;
 }
-.full-box{
+.full-box {
   padding: 20px;
   border-radius: 10px;
   background: #10111d;
   min-height: 500px;
   height: 100%;
 }
-#otpGenBtn{
-  width: 130px;
-  margin: 20% 35%;
-  height: 130px;
+#otpGenBtn {
+  max-width: 120px;
+  text-align: center;
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120px;
   border-radius: 50%;
   padding: 10px;
   background: rgb(0, 130, 206);
   border: none;
 }
 
-#result{
+#result {
   padding: 10px;
   margin-top: 10px;
   background: #2a2d39;
   display: none;
 }
 
-#result p{
+#result p {
   margin-bottom: 0;
   font-size: 15px;
   font-weight: bold;
@@ -66,7 +70,7 @@ body{
 
 button {
   height: 50px;
-  font-size: 2rem!important;
+  font-size: 2rem !important;
 }
 
 .calculator-keys {
