@@ -4,8 +4,9 @@ var randomOtp;
 var keys = document.querySelectorAll('.key');
 var otpInput = document.getElementById('otpInput');
 var addValues = [];
-
 const checkBtn = document.getElementById('checkBtn');
+const delBtn = document.getElementById('delete');
+const clearAll = document.getElementById('clearAll');
 
 otpGenBtn.addEventListener('click', function(){
   generateOTP();
@@ -34,19 +35,51 @@ checkBtn.addEventListener('click',function(){
   }
 });
 
+
+delBtn.addEventListener('click',function(){
+  addValues.pop();
+  for (let i = 0; i < addValues.length; i++) {
+    var value = addValues.join('');
+  }
+  otpInput.value = parseInt(value);
+  if(addValues.length == 0){
+    otpInput.value = '';
+  }
+  if(addValues.length < 6){
+    keys.forEach(function(key){
+      key.removeAttribute('disabled', 'disabled');
+    })
+  }
+});
+
+clearAll.addEventListener('click',function(){
+  if(addValues.length > 0){
+    addValues.length = 0;
+    otpInput.value = '';
+  }
+  if(addValues.length < 6){
+    keys.forEach(function(key){
+      key.removeAttribute('disabled', 'disabled');
+    })
+  }
+});
+
+
 function getKeyValue(key){
   key.addEventListener('click', function(){
     var keyValue = key.value;
     addValues.push(keyValue);
+    for (let i = 0; i < addValues.length; i++) {
+      var value = addValues.join('');
+    }
+    otpInput.value = parseInt(value);
+
+    //limit 6 digit input
     if(addValues.length >= 6){
       keys.forEach(function(key){
         key.setAttribute('disabled', 'disabled');
       })
     }
-    for (let i = 0; i < addValues.length; i++) {
-      var value = addValues.join('');
-    }
-    otpInput.value = parseInt(value);
   });
 };
 
