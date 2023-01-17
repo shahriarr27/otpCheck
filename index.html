@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check OTP</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="whole-wrapper">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="right-side full-box">
+          <input type="number" name="number" class="screen" id="genNumber" disabled>
+          <button class="btn btn-success btn-lg" id="otpGenBtn">Generate OTP</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="calculator full-box">
+
+          <input type="text" class="screen z-depth-1" value="" disabled />
+        
+          <div class="calculator-keys">
+        
+            <button type="button" value="7" class="btn btn-light waves-effect">7</button>
+            <button type="button" value="8" class="btn btn-light waves-effect">8</button>
+            <button type="button" value="9" class="btn btn-light waves-effect">9</button>
+        
+        
+            <button type="button" value="4" class="btn btn-light waves-effect">4</button>
+            <button type="button" value="5" class="btn btn-light waves-effect">5</button>
+            <button type="button" value="6" class="btn btn-light waves-effect">6</button>
+        
+        
+            <button type="button" value="1" class="btn btn-light waves-effect">1</button>
+            <button type="button" value="2" class="btn btn-light waves-effect">2</button>
+            <button type="button" value="3" class="btn btn-light waves-effect">3</button>
+        
+        
+            <button type="button" class="decimal function btn btn-secondary" value=".">DEL.</button>
+            <button type="button" value="0" class="btn btn-light waves-effect">0</button>
+            <button type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear">AC</button>
+        
+          </div>
+          <button class="check btn bg-info borderless text-white w-100">CHECK</button>
+          <div class="result">
+            <p class="text-success text-center">OTP Matched!</p>
+            <p class="text-danger text-center">OTP Did Not Matched!</p>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js'></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
